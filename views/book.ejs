@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+    <title>book</title>
+    <link rel='stylesheet' href='stylesheets/styles.css' />
+    <link rel='stylesheet' href='stylesheets/animation.css' />
+    <link rel='stylesheet' href='stylesheets/lrtk.css' />
+  </head>
+  <body>
+  	<header>
+  <nav id="nav">
+    <ul>
+      <li><a href="/" >我的首页</a></li>
+      <li><a href="/book"  title="前端书籍">前端书籍</a></li>
+      <li><a href="/addBook"  title="推荐书籍">添加书籍</a></li>
+      <li><a href="/message"  title="message">留言</a></li>
+      <li><a href="/login"  title="login">登录</a></li>
+    </ul>
+    
+  </nav>
+</header>
+<!--header end-->
+<div id="mainbody">
+  <div class="info">
+    <figure> <img src="images/book.jpg"  alt="Panama Hat">
+      <figcaption><strong>一个爱书的人,</strong>他必定不致于缺少一个忠实的朋友，一个良好的老师，一个可爱的伴侣，一个温情的安慰者。</figcaption>
+    </figure>
+    <div class="card">
+      <h1>我的名片</h1>
+      <p>网名：吾爱丶本倾城</p>
+      <p>职业：Web前端工程师</p>
+      <p>电话：15517143323</p>
+      <p>Email：1564188435@qq.com</p>
+      <ul class="linkmore">
+        <li><a href="#" class="talk" title="给我留言"></a></li>
+        <li><a href="#" class="address" title="联系地址"></a></li>
+        <li><a href="#" class="email" title="给我写信"></a></li>
+        <li><a href="#" class="photos" title="生活照片"></a></li>
+        <li><a href="#" class="heart" title="关注我"></a></li>
+        
+      </ul>
+    </div>
+  </div>
+  <!--info end-->
+  <div class="blank"></div>
+  <div class="blogs">
+    <ul class="bloglist">
+    	<% if(result.length == 0){%>
+    		博主暂时未推荐书籍，请耐心等待
+    	<%}else{%>
+    		<%for(var i =0;i<result.length;i++){%>
+    		<li>
+					<div class="arrow_box">
+						<div class="ti"></div>
+						<div class="ci"></div>
+						<h2 class="title"><a href="/bcontent?id=<%= result[i].id%>" ><%= result[i].title%></a></h2>
+						<ul class="textinfo">
+							<!--<img src="<%= result[i].img%>">-->
+							<p><%= result[i].content%></p>
+							<a href="/book/deleteBook?id=<%= result[i].id%>" style="color: white;display: inline-block;width: 40px;text-align:center;height: 20px;line-height: 20px;background: red;float: right;margin-left: 20px;" >删除</a>
+							<a href="/book/updateBook?id=<%= result[i].id%>" style="color: white;display: inline-block;width: 40px;text-align:center;height: 20px;line-height: 20px;background: green;float: right;">修改</a>
+						</ul>
+						
+					</div>
+				</li>
+    		<%}%>
+    	<%}%>
+      
+    </ul>
+    <!--bloglist end-->
+   
+</div>
+<!--mainbody end-->
+<footer>
+  
+    <section class="flickr">
+      
+    </section>
+  </div>
+  <div class="footer-bottom">
+    <p>Copyright 2013 Design by <a href="https://user.qzone.qq.com/1564188435/infocenter">吾爱丶本倾城</a></p>
+  </div>
+</footer>
+<!-- jQuery仿腾讯回顶部和建议 代码开始 -->
+<div id="tbox">  <a id="gotop" href="javascript:void(0)"></a> </div>
+<!-- 代码结束 -->
+
+  </body>
+  <script src="javascripts/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="javascripts/js.js" type="text/javascript" charset="utf-8"></script>
+  <script src="javascripts/silder.js"></script><!--获取当前页导航 高亮显示标题--> 
+  <script type="text/javascript">
+  	
+  </script>
+</html>
